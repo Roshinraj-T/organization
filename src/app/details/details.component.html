@@ -1,0 +1,11 @@
+<p>details works!</p>
+<div *ngIf="detailsData.length" class="card">
+    <h3>Details of {{detailsData[0].empname}}</h3>
+    <div class="details">
+        <h3>{{detailsData[0].empname}}</h3>
+        <p>EmpId: {{detailsData[0].empid}}</p>
+        <p>Address: {{detailsData[0].address}}</p>
+        <p>Gender: {{detailsData[0].gender}}</p>
+        <p>Contact number: {{detailsData[0].contactnumber}}</p>
+    </div>    
+</div>

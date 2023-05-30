@@ -1,0 +1,74 @@
+create database and table insert data init
+create a server file for backend
+create a angular project
+check route enble
+check base href
+create component as u want 
+in app-routing.module.ts 
+    Routes=[{path:'path-name',component:component-name}]
+add router-outlet in appcomponent.html
+add a anchr tag to navigate to that component like this 
+    <a href="/component"> component</a>
+create service and add fuctions to it
+    getData(){
+        return this.http.get(url)
+    };
+import httpclient inn service 
+insert httpclient in constructor of service
+import service in appmodule
+inject service name in provider
+inject httpclienmodule in import decorator
+import service and onInit file in component.ts
+inject service in component constructor
+implement onInit to component class
+create variable to access data from api
+write onInit fuction 
+inside the oninit function 
+    this.s.getData().subscribe((data)=>{
+        log(data)
+        this.createdVariable=data
+    })
+use this variable in html file to show the data using string interpolation
+
+============component to component navigate
+create a component
+inject that component in app-routing.module.ts Routes=[] like this
+    Routes=[
+        {
+            path:'emp/:id',
+            component:component-name
+        }
+    ]
+write a click event in parent component html and pass the required value in that function like this
+    <tag (click)="func(id)"></tag>
+import {Router} from '@angular/router' in parent-component.ts to access the routes function
+
+write a function like this in parent-component.ts
+    func(id){
+        this.rout.navigate(['emp',id])
+    }
+create a api call function for that data
+wirte a function for that data in service file
+import service and onInit ,activatedroute for use paramsid access in child component file
+inject that service file in child component consturctor
+implement oninit 
+create a variable to access that data from api like this
+        data:any;
+create an  interace to give a contarct to that variable like this 
+    interface Data{
+        name:string;
+        number:number;
+    }
+modify that variable after interaface like this 
+    data:Data[]=[];
+inject all imports in constructor
+write oninit function like this
+    onInit(){
+       let id=this.routes.snapshot.paramMap.get('id')
+       this.s.funInService(id).subscribe((data)=>{
+           data=data
+       })
+    }
+show that variable in frontend using string interpolation in child-component html
+use ngIf in that html tag because ini dom rendenring data is not available. so we have to validate it like this
+    <tag *ngIf="createdVariable.length"></tag>

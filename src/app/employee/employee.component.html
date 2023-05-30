@@ -1,0 +1,19 @@
+<p>employee works!</p>
+<table>
+    <thead>
+        <th>empid</th>
+        <th>empname</th>
+        <th>gender</th>
+        <th>address</th>
+        <th>contactnumber</th>
+    </thead>
+    <tbody>
+        <tr (click)="details(e.empid)" *ngFor="let e of employeeData">
+            <td>{{e.empid}}</td>
+            <td>{{e.empname}}</td>
+            <td>{{e.gender}}</td>
+            <td>{{e.address}}</td>
+            <td>{{e.contactnumber}}</td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,15 @@
+<p>company works!</p>
+<table>
+    <thead>
+        <th>cmpid</th>
+        <th>cmpname</th>
+        <th>location</th>
+    </thead>
+    <tbody>
+        <tr (click)="details(e.cmpid)" *ngFor="let e of companyData">
+            <td>{{e.cmpid}}</td>
+            <td>{{e.cmpname}}</td>
+            <td>{{e.location}}</td>
+        </tr>
+    </tbody>
+</table>
