@@ -1,0 +1,18 @@
+.companyform{
+    display: flex;
+    justify-content: center;
+    .form{
+        text-align: left;
+        width: 500px;
+        display: flex;
+        flex-direction: column;
+        .name,.id,.location,.add{
+            padding: 20px;
+            display: flex;
+    justify-content: space-around;
+        }
+        .add,.getcompanytable,.backToCompanyForm,.updateCompanyDetails{
+            text-align: center;
+        }
+    }
+}

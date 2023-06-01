@@ -2,7 +2,7 @@ create database and table insert data init
 create a server file for backend
 create a angular project
 check route enble
-check base href
+check base href in index.html
 create component as u want 
 in app-routing.module.ts 
     Routes=[{path:'path-name',component:component-name}]

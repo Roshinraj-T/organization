@@ -1,15 +1,22 @@
-<p>company works!</p>
+<!-- <app-companyform></app-companyform> -->
+<button (click)="backToComapnyForm()">Back</button>
 <table>
     <thead>
         <th>cmpid</th>
         <th>cmpname</th>
         <th>location</th>
+        <th>Actions</th>
     </thead>
     <tbody>
-        <tr (click)="details(e.cmpid)" *ngFor="let e of companyData">
+        <tr  *ngFor="let e of companyData">
             <td>{{e.cmpid}}</td>
             <td>{{e.cmpname}}</td>
             <td>{{e.location}}</td>
+            <td>
+                <button (click)="details(e.cmpid)">View</button>
+                <button (click)="editCompanyDetails(e.cmpid)">Edit</button>
+                <button (click)="deleteCompanyDetails(e.cmpid)">Delete</button>
+            </td>
         </tr>
     </tbody>
 </table>

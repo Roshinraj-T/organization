@@ -20,4 +20,15 @@ export class ServiceService {
   getCompanyDatabyId(id:string|null){
     return this.http.get(this.url+'/getCompanyDetails/'+id)
   }
+  insertDataToCompany(data:any){
+    return this.http.post(this.url+'/insert',data)
+  }
+  updateDataToCompany(data:any){
+    console.log('service update data',data);
+    
+    return this.http.put(this.url+'/update',data)
+  }
+  deleteDataIncompany(id:number){
+    return this.http.put(this.url+'/delete',{cmpid:id})
+  }
 }

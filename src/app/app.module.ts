@@ -8,6 +8,8 @@ import { DetailsComponent } from './details/details.component';
 import {  ServiceService} from "./service.service";
 import { HttpClientModule } from '@angular/common/http';
 import { DetailsforcompanyComponent } from './detailsforcompany/detailsforcompany.component';
+import { CompanyformComponent } from './companyform/companyform.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,12 +17,14 @@ import { DetailsforcompanyComponent } from './detailsforcompany/detailsforcompan
     CompanyComponent,
     EmployeeComponent,
     DetailsComponent,
-    DetailsforcompanyComponent
+    DetailsforcompanyComponent,
+    CompanyformComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [ServiceService],
   bootstrap: [AppComponent]

@@ -13,7 +13,7 @@ const connection = mysql.createConnection({
 connection.connect();
 // To get all details in company table
 app.get('/getCompanyDetails',(req,res)=>{
-    connection.query('SELECT cmpid, cmpname, location FROM company',(error,results)=>{
+    connection.query('SELECT cmpid, cmpname,isActive,location FROM company where isActive=1',(error,results)=>{
         if(error){
             console.log(error);
         }
@@ -47,4 +47,32 @@ app.get('/getEmployeeDetails/:empid',(req,res)=>{
         res.json(results);
     });
 }); 
+// to insert a data to company table
+app.post('/insert',(req,res)=>{
+    connection.query('insert into company (cmpname,location) values (?,?)',[req.body.cmpname,req.body.location],(error,results)=>{
+        if(error){
+            console.log(error);
+        }
+        res.json(results)
+    });
+});
+// to upadate company details
+app.put('/update',(req,res)=>{
+    connection.query('update company set cmpname=?,location=? where cmpid=?',[req.body.cmpname,req.body.location,req.body.cmpid],(error,results)=>{
+        if(error){
+            console.log(error);
+        }
+        res.json(results)
+    })
+})
+
+// to delete company details
+app.put('/delete',(req,res)=>{
+    connection.query('update company set isActive=? where cmpid=?',[0,req.body.cmpid],(error,results)=>{
+        if (error) {
+            console.log(error);
+        }
+        res.json(results)
+    })
+})
 app.listen(3000)
