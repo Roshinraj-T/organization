@@ -18,17 +18,18 @@ export class CompanyformComponent implements OnInit{
   cmpid:any;
   cmpname:any;
   location:any;
+  isvisible:any='true';
   constructor(private s:ServiceService,private route:Router,private router:ActivatedRoute){}
   ngOnInit(): void {
     // throw new Error('Method not implemented.'); 
     let id=this.router.snapshot.paramMap.get('id');
+    this.isvisible=!this.router.snapshot.paramMap.get('isvis')
     this.s.getCompanyDatabyId(id).subscribe((data:any)=>{
+      // this.companyData=
      this.cmpid=data[0].cmpid;
      this.cmpname=data[0].cmpname;
      this.location=data[0].location;
-    console.log(data);
-    
-    
+    console.log(data);    
     })
   }
   addcompanyDeatils(){

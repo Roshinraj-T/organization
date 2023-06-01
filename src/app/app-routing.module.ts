@@ -16,7 +16,7 @@ const routes: Routes = [
     component:CompanyformComponent
   },
   {
-    path:'companyformbyId/:id',
+    path:'companyformbyId/:isvis/:id',
     component:CompanyformComponent
   },
   {

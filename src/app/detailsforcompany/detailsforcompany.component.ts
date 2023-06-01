@@ -12,7 +12,7 @@ interface CompanyData{
   styleUrls: ['./detailsforcompany.component.scss']
 })
 export class DetailsforcompanyComponent implements OnInit{
-  details:CompanyData[]=[]
+  details:CompanyData[]=[];
   constructor(private s:ServiceService , private rout:ActivatedRoute){}
   ngOnInit(): void {
     // throw new Error('Method not implemented.');

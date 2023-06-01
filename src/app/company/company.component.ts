@@ -28,7 +28,8 @@ export class CompanyComponent implements OnInit {
     this.rout.navigate(['companyform'])
   }
   editCompanyDetails(id:number){
-    this.rout.navigate(['companyformbyId',id])
+    let isvis:any=true;
+    this.rout.navigate(['companyformbyId',isvis,id])
   }
   deleteCompanyDetails(id:number){
     this.s.deleteDataIncompany(id).subscribe((data)=>{

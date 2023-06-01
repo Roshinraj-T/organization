@@ -14,13 +14,13 @@
             <input type="text" name="location" [(ngModel)]="location">
         </div>
         <div class="add">
-            <button (click)="addcompanyDeatils()">Add</button>
+            <button (click)="addcompanyDeatils()" [hidden]="!isvisible" >Add</button>
         </div>
         <div class="getcompanytable">
             <!-- <button (click)="getcompanytable()">Company Table</button> -->
         </div>
         <div class="updateCompanyDetails">
-            <button (click)="updateCompanyDetails(cmpid)">update</button>
+            <button (click)="updateCompanyDetails(cmpid)" [hidden]="isvisible">update</button>
         </div>
     </div>
 </div>
