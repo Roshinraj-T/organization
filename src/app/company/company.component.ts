@@ -11,7 +11,6 @@ export class CompanyComponent implements OnInit {
   companyData:any;
   constructor(private s:ServiceService,private rout:Router){}
   ngOnInit(): void {
-    // throw new Error('Method not implemented.');
     this.getCompanyData();
   }
   getCompanyData(){
@@ -31,10 +30,11 @@ export class CompanyComponent implements OnInit {
     let isvis:any=true;
     this.rout.navigate(['companyformbyId',isvis,id])
   }
-  deleteCompanyDetails(id:number){
-    this.s.deleteDataIncompany(id).subscribe((data)=>{
+ deleteCompanyDetails(id:number){
+    this.s.deleteDataIncompany(id).subscribe((data:any)=>{
       console.log(data);
       this.getCompanyData();
     })
   }
+  
 }

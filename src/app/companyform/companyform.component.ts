@@ -20,16 +20,26 @@ export class CompanyformComponent implements OnInit{
   location:any;
   isvisible:any='true';
   constructor(private s:ServiceService,private route:Router,private router:ActivatedRoute){}
+
   ngOnInit(): void {
     // throw new Error('Method not implemented.'); 
-    let id=this.router.snapshot.paramMap.get('id');
     this.isvisible=!this.router.snapshot.paramMap.get('isvis')
+    let id=this.router.snapshot.paramMap.get('id');
+    console.log(id);
+    
+    
     this.s.getCompanyDatabyId(id).subscribe((data:any)=>{
-      // this.companyData=
+      // this.companyData=data;
+      // console.log("company")
+      
+      // console.log(this.companyData);
+      console.log(data); 
      this.cmpid=data[0].cmpid;
      this.cmpname=data[0].cmpname;
      this.location=data[0].location;
-    console.log(data);    
+      console.log("data");
+      
+       
     })
   }
   addcompanyDeatils(){
@@ -47,6 +57,8 @@ export class CompanyformComponent implements OnInit{
     this.route.navigate(['company'])
   }
   updateCompanyDetails(id:number){
+    // console.log(id,"");
+    
     let data:any={
       cmpid:this.cmpid,
       cmpname:this.cmpname,
