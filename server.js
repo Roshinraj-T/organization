@@ -5,10 +5,10 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password:'Dream@123',
-  database: 'organisation'
+  host: '***',
+  user: '***',
+  password:'***',
+  database: '***'
 });
 connection.connect();
 // To get all details in company table
